@@ -25,9 +25,29 @@ header{
    
 }
 .container{
-    max-width: 80%;
+    max-width: 1152;
     padding: 0 15px;
     margin: 0 auto;
+}
+@media (min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+}
+@media (min-width:764px){
+    .container{
+        max-width: 720px;
+    }
+}
+@media (min-width:992px){
+    .container{
+        max-width: 960px;
+    }
+}
+@media (min-width:1200px){
+    .container{
+        max-width: 1152px;
+    }
 }
 
 nav .left a{
@@ -46,6 +66,10 @@ header nav{
 }
 nav .branding{
     margin-right: 3rem;
+}
+.branding-responsive{
+   padding: 2rem 0;
+    display: none;
 }
 .hero{
     padding: 3rem 0;
@@ -388,9 +412,7 @@ footer{
    text-align: center;
     padding: 3rem 0;
 }
-footer .footer-logo{
-  
-}
+
 footer .footer-logo img{
    width: 150px;
 }
@@ -408,12 +430,7 @@ footer .copyright{
     font-size: 1rem;
 }
 
-/* resoponsive for small device */
-@media(max-width:1095px){
-    #main-nav{
-        display: none;
-    }
-}
+
 .site-main-wrapper{
     position: relative;
 }
@@ -426,6 +443,7 @@ footer .copyright{
     outline: none;
     border: none;
     cursor: pointer;
+    display: none;
 }
 .hamberger img{
     width: 30px;
@@ -457,12 +475,134 @@ footer .copyright{
 }
 .mobile-nav ul{
     list-style: none;
+    
+}
+.mobile-nav ul li{
+    padding: 1rem 0;
 }
 .mobile-nav ul li a{
     text-decoration: none;
     color: var(--dark);
     font-size: 2rem;
+   
 }
 .open{
  transform: translateX(0);
+}
+
+/* resoponsive for small device */
+@media(max-width:1095px){
+    #main-nav{
+        display: none;
+        
+    }
+    .hamberger{
+        display: block;
+    }
+    .branding-responsive{
+        display: block;
+    }
+    .hero img{
+        width: 260px;
+    }
+    .hero .right h1{
+        font-size: 3rem;
+    }
+    .hero{
+        padding-top: 10rem;
+    }
+    header{
+      clip-path:polygon(0 0, 100% 0, 100% 100%, 27% 89%, 0 100%);
+    }
+    section .about-img {
+        height: 360px;
+    }
+    section.services .card-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    section.work .card-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    section.blog .card-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    section.blog{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
+    }
+    
+
+}
+@media (max-width:576px){
+    .hero{
+        flex-direction: column;
+    }
+    header{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 69% 96%, 0 100%);
+    }
+    .hero .right{
+        position:absolute;
+        top: 260px;
+        padding: 0 1rem;
+        background:linear-gradient( rgba( 0,0,0,0), rgba( 0,0,0,0.9) );
+    }
+    .hero .left{
+        margin-top: -5rem;
+        margin-right: -9rem;
+        padding-bottom: 3rem;
+      
+    }
+    .about-inner-wrapper{
+        flex-direction: column;
+    }
+    .about-inner-wrapper .right{
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .about-inner-wrapper .social{
+        justify-content: center;
+    }
+    section{
+        padding: 4rem 0;
+    }
+    section.services .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+        margin-top: 8rem;
+    }
+    .freelancer h1{
+        line-height: 2.5rem;
+    }
+    .freelancer p{
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .freelancer{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 67% 91%, 0 100%);
+        padding-bottom: 7rem;
+    }
+    .section-heading + p {
+        margin-bottom: 3rem;
+    }
+    .reviews .slider .slide {
+        padding:0;
+        text-align: justify;
+    }
+    section.work .card-wrapper {
+        grid-template-columns: repeat(1,1fr);
+    }
+    section.blog {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 98%, 0 100%);
+        padding-bottom: 8rem;
+    }
+    section.contact .card-wrapper {
+        grid-template-columns: repeat(1,1fr );
+    }
+    section.contact .input-wrap-1 {
+        grid-template-columns: repeat(1,1fr );
+        grid-gap: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    section.contact .input-wrap-2 textarea{
+       margin-top: 1rem;
+    }
+
 }
